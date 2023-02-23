@@ -12,8 +12,7 @@
 ## 1.4、具体实现
 在每次发送真实数据之前，客户端先生成一把密钥，然后先把密钥传输给服务端。之后客户端给服务端发送真实数据的时候，会用这把密钥对数据进行加密，服务端收到加密数据之后，用刚才收到的密钥进行解密。
 ## 1.5、图解
-![][avatar]
-[avatar]: https://img-blog.csdnimg.cn/20210729235620597.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1OTAxNzQx,size_16,color_FFFFFF,t_70
+![](https://img-blog.csdnimg.cn/20210729235620597.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1OTAxNzQx,size_16,color_FFFFFF,t_70)
 
 # 2、非对称加密
 ## 2.1、定义
@@ -31,8 +30,7 @@
 1.客户端要向服务器发送信息，客户端和服务器都要产生一对用于加密和解密的公钥和私钥。 2.客户端的私钥保密，客户端的公钥告诉服务器；服务器的私钥保密，服务器的公钥告诉客户端。 3.客户端要给服务器发送信息时，客户端用服务器的公钥加密信息，因为服务器的公钥是公开的，客户端可以得到。 4.客户端将这个消息发给服务器（已经用服务器的公钥加密消息）。 5.服务器收到这个消息后，服务器用自己的私钥解密客户端的消息。其他所有收到这个报文的人都无法解密，因为只有服务器才有服务器的私钥。
 
 ## 2.5、图解
-![][avatar]
-[avatar]: https://img-blog.csdnimg.cn/20210729235727421.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1OTAxNzQx,size_16,color_FFFFFF,t_70
+![](https://img-blog.csdnimg.cn/20210729235727421.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1OTAxNzQx,size_16,color_FFFFFF,t_70)
 
 # 3、https加密方式
 上述的两种加密方式各有千秋，所以HTTPS作为最后出场的大佬，当然集大成者，采用的是处理信息的方式是：结合对称加密+非对称加密这两种方式，我们可以用非对称加密的方式来传输对称加密过程中的密钥，之后我们就可以采取对称加密的方式来传输数据了。
@@ -55,16 +53,14 @@
 
 而我们需要一个在互联网世界中充当公理的机构来签发这个证书，它就是CA机构，它是如今互联网世界正常运作的前提，而CA机构颁发的“身份证”就是数字证书：
 
-![][avatar]
-[avatar]: https://img-blog.csdnimg.cn/img_convert/e49dc6119425630d482d806e251df91c.png
+![](https://img-blog.csdnimg.cn/img_convert/e49dc6119425630d482d806e251df91c.png)
 
 ## 3.3、数字签名
 有了数字整数之后，我们又，如何防止整数篡改呢？
 
 我们把证书原本的内容生成一份“签名”，比对证书内容和签名是否一致就能判别是否被篡改。这就是数字证书的“防伪技术”，这里的“签名”就叫数字签名：
 
-![][avatar]
-[avatar]:https://img-blog.csdnimg.cn/img_convert/0efcb354320e2a06f5afd88d6fedea96.png
+![](https://img-blog.csdnimg.cn/img_convert/0efcb354320e2a06f5afd88d6fedea96.png)
 
 ## 3.3.1、数字签名的制作过程：
 1、CA机构拥有非对称加密的私钥和公钥。
